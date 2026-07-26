@@ -1,1 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VELORA Dashboard</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+
+body{
+background:linear-gradient(180deg,#0a0014,#050010,#000);
+color:white;
+padding:20px;
+}
+
+.container{max-width:900px;margin:auto;}
+
+.logo{font-size:32px;font-weight:800;color:#a855f7;margin-bottom:10px;}
+.greeting{color:#aaa;}
+.username{font-size:24px;font-weight:700;margin-bottom:15px;}
+
+.card{
+background:#120022;
+padding:18px;
+border-radius:18px;
+margin-bottom:15px;
+border:1px solid rgba(138,43,226,.25);
+}
+
+.balance{
+font-size:40px;
+font-weight:800;
+margin:10px 0;
+}
+
+.toggle-btn{
+padding:10px 14px;
+border:none;
+border-radius:30px;
+background:#8a2be2;
+color:white;
+cursor:pointer;
+}
+
+.actions{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.actions a{
+flex:1;
+background:#1a0a2e;
+padding:12px;
+border-radius:12px;
+text-align:center;
+color:white;
+text-decoration:none;
+border:1px solid rgba(138,43,226,.2);
+}
+
+.module{
+background:#1a0a2e;
+padding:14px;
+border-radius:12px;
+margin-bottom:10px;
+border:1px solid rgba(138,43,226,.12);
+font-size:13px;
+line-height:1.6;
+}
+
+.m-title{color:#a855f7;font-weight:700;margin-bottom:5px;}
+.m-desc{color:#ccc;font-size:12px;margin-bottom:6px;}
+.m-pay{color:#fff;font-weight:600;}
+
+.section-title{
+color:#a855f7;
+font-weight:700;
+margin-top:15px;
+margin-bottom:8px;
+}
+
+.ref{
+background:#1a0a2e;
+padding:12px;
+border-radius:10px;
+word-break:break-all;
+margin-top:10px;
+}
+
+.copy-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:#8a2be2;
+color:white;
+font-weight:700;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* FLOATING POPUP */
+.popup{
+position:fixed;
+left:15px;
+bottom:15px;
+width:280px;
+background:#120022;
+border:1px solid rgba(138,43,226,.3);
+border-radius:14px;
+padding:12px;
+display:none;
+z-index:9999;
+animation:pop .4s ease;
+}
+
+@keyframes pop{
+from{transform:translateY(30px);opacity:0;}
+to{transform:translateY(0);opacity:1;}
+}
+
+.popup-title{
+color:#a855f7;
+font-weight:700;
+font-size:13px;
+}
+
+.popup-time{
+color:#aaa;
+font-size:11px;
+margin-top:4px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">💜 VELORA</div>
+
+<div class="greeting">Good day,</div>
+<div class="username" id="user"></div>
+
+<div class="card">
+<div class="section-title" id="plan"></div>
+
+<h3>Total Balance</h3>
+<div class="balance" id="balance"></div>
+
+<button class="toggle-btn" onclick="toggleBalance()">Show in Dollar</button>
+</div>
+
+<div class="actions">
+<a href="activation.html">⚡ Activate</a>
+<a href="activation.html">💸 Withdraw</a>
+<a href="activation.html">📋 History</a>
+</div>
+
+<div class="card">
+
+<div class="section-title">🔒 Account Status</div>
+
+<p id="statusText" style="color:#ff4d6d;font-weight:600;margin-bottom:12px;"></p>
+
+<div style="color:#a855f7;font-weight:700;margin-bottom:6px;">
+📌 Account State
+</div>
+
+<p style="color:#ccc;font-size:13px;line-height:1.6;margin-bottom:12px;">
+Account not activated — activate your selected plan to unlock full dashboard access, earning modules, and withdrawal features.
+</p>
+
+<div style="color:#a855f7;font-weight:700;margin-bottom:6px;">
+💸 Withdrawal Status
+</div>
+
+<p style="color:#ccc;font-size:13px;line-height:1.6;">
+Withdrawals are currently locked.<br>
+Activation is required before any withdrawal request can be processed.<br>
+After activation, funds become eligible for instant processing based on your plan.
+</p>
+
+</div>
+
+<div class="card">
+<div class="section-title">💳 Activation Fee</div>
+<p id="feeText"></p>
+</div>
+
+<h3 class="section-title">💰 EARNING MODULES</h3>
+<div id="modules"></div>
+
+<div class="card">
+<h3 class="section-title">🔗 Referral Link</h3>
+<div class="ref" id="ref"></div>
+<button class="copy-btn" onclick="copyRef()">Copy Referral Link</button>
+</div>
+
+</div>
+
+<!-- FLOATING POPUP -->
+<div class="popup" id="popup">
+<div class="popup-title" id="msg"></div>
+<div class="popup-time" id="time"></div>
+</div>
+
+<!-- SOUND -->
+<audio id="sound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
+
+<script>
+
+const user = localStorage.getItem("velora_username") || "User";
+const plan = localStorage.getItem("velora_plan") || "PLATINUM";
+
+document.getElementById("user").innerText = "Hi, " + user + " 👋";
+document.getElementById("plan").innerText = plan + " PLAN";
+document.getElementById("ref").innerText = "velora.app/?ref=" + user;
+
+const data = {
+
+PLATINUM:{
+fee:"₦9,000 ($4.50)",
+cashback:"₦8,000",
+status:"Account not activated — PLATINUM locked",
+modules:[
+{t:"💰 Instant Cashback",d:"Instant ₦8,000 reward after activation",p:"₦8,000 ($4.00)"},
+{t:"🤝 Direct Referral Bonus",d:"Earn ₦7,200 per referral instantly",p:"₦7,200 ($3.60)"},
+{t:"🌐 Indirect Level 1 Bonus",d:"Earn ₦300 from first-level referrals",p:"₦300 ($0.15)"},
+{t:"🌐 Indirect Level 2 Bonus",d:"Earn ₦100 from second-level referrals",p:"₦100 ($0.05)"},
+{t:"🤖 AI Upload Reward",d:"Earn from AI content uploads",p:"₦1,500 ($0.75)"},
+{t:"📚 AI Lucky Book",d:"Daily AI prediction reward system",p:"₦5,000 ($2.50)"},
+{t:"⚽ Football Quiz",d:"Earn from sports prediction quizzes",p:"₦4,000 ($2.00)"},
+{t:"▶️ YouTube Earnings",d:"Earn from YouTube engagement tasks",p:"₦20,000 ($10.00)"},
+{t:"👻 Snapchat Reward",d:"Earn from Snapchat activities",p:"₦1,000 ($0.50)"},
+{t:"🎁 Spillover Bonus",d:"Passive network earnings system",p:"₦1,000 ($0.50)"}
+]
+},
+
+GOLD:{
+fee:"₦14,500 ($7.25)",
+cashback:"₦12,000",
+status:"Account not activated — GOLD locked",
+modules:[
+{t:"💰 Instant Cashback",d:"Instant ₦12,000 reward after activation",p:"₦12,000 ($6.00)"},
+{t:"🤝 Direct Referral Bonus",d:"Earn ₦12,500 per referral",p:"₦12,500 ($6.25)"},
+{t:"🌐 Spillover Level 1",d:"₦400 passive earnings system",p:"₦400 ($0.20)"},
+{t:"🌐 Spillover Level 2",d:"₦100 secondary network reward",p:"₦100 ($0.05)"},
+{t:"🤖 AI Rewards System",d:"Earn from AI tasks and uploads",p:"₦2,000 - ₦10,000"},
+{t:"⚽ Football Earnings",d:"Sports prediction earnings",p:"₦8,000 ($4.00)"},
+{t:"▶️ YouTube Premium",d:"High-tier content earnings",p:"₦40,000 ($20.00)"},
+{t:"👻 Snapchat Earnings",d:"Social media earning system",p:"₦6,000 ($3.00)"},
+{t:"🎉 Network Bonus",d:"Active user spillover rewards",p:"₦8,000 ($4.00)"}
+]
+}
+
+};
+
+document.getElementById("statusText").innerText = data[plan].status;
+document.getElementById("feeText").innerText = data[plan].fee;
+
+const box=document.getElementById("modules");
+
+data[plan].modules.forEach(m=>{
+const div=document.createElement("div");
+div.className="module";
+div.innerHTML=`
+<div class="m-title">${m.t}</div>
+<div class="m-desc">${m.d}</div>
+<div class="m-pay">${m.p}</div>
+`;
+box.appendChild(div);
+});
+
+let showDollar=false;
+document.getElementById("balance").innerText = data[plan].cashback;
+
+function toggleBalance(){
+const btn=document.querySelector(".toggle-btn");
+
+if(!showDollar){
+document.getElementById("balance").innerText =
+"$" + (plan==="PLATINUM" ? "4.00" : "6.00");
+btn.innerText="Show in Naira";
+showDollar=true;
+}else{
+document.getElementById("balance").innerText =
+data[plan].cashback;
+btn.innerText="Show in Dollar";
+showDollar=false;
+}
+}
+
+function copyRef(){
+navigator.clipboard.writeText(document.getElementById("ref").innerText);
+alert("Copied!");
+}
+
+/* ===== FLOATING + SOUND ===== */
+
+const names=["Ayo","Mary","John","Grace","David","Chioma","James","Sophia","Michael","Tunde","Peter","Emma","Daniel","Blessing"];
+const countries=["Nigeria","USA","Ghana","Kenya","UK","Canada","South Africa"];
+
+const messages=[];
+for(let i=0;i<50;i++){
+const n=names[Math.floor(Math.random()*names.length)];
+const c=countries[Math.floor(Math.random()*countries.length)];
+const amt=Math.floor(Math.random()*90000)+2000;
+messages.push(`${n} from ${c} earned ₦${amt.toLocaleString()} ($${(amt/1500).toFixed(2)})`);
+}
+
+function showPopup(){
+const msg=messages[Math.floor(Math.random()*messages.length)];
+
+document.getElementById("msg").innerText=msg;
+document.getElementById("time").innerText=Math.floor(Math.random()*59)+" mins ago";
+
+const popup=document.getElementById("popup");
+popup.style.display="block";
+
+/* SOUND */
+const sound=document.getElementById("sound");
+sound.currentTime=0;
+sound.play().catch(()=>{});
+
+setTimeout(()=>popup.style.display="none",5000);
+}
+
+setInterval(showPopup,6000);
+setTimeout(showPopup,2000);
+
+</script>
+
+</body>
+  </html>
