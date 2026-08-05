@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VELORA Login</title>
+<title>NEXTEL Login</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -15,9 +15,16 @@ box-sizing:border-box;
 font-family:Poppins,sans-serif;
 }
 
+:root{
+--green:#2e7d32;
+--green-dark:#1b5e20;
+--lemon:#dfff4f;
+--white:#ffffff;
+}
+
 body{
-background:radial-gradient(circle at top,#1a0033,#0a0014 60%,#000);
-color:white;
+background:linear-gradient(180deg,var(--green-dark),var(--green));
+color:var(--white);
 padding:20px;
 min-height:100vh;
 display:flex;
@@ -28,11 +35,11 @@ justify-content:center;
 .container{
 width:100%;
 max-width:420px;
-background:rgba(18,0,34,0.9);
+background:rgba(255,255,255,.08);
 padding:28px;
 border-radius:18px;
-border:1px solid rgba(138,43,226,.25);
-box-shadow:0 0 25px rgba(138,43,226,.15);
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 0 25px rgba(0,0,0,.25);
 backdrop-filter:blur(8px);
 text-align:center;
 }
@@ -40,18 +47,19 @@ text-align:center;
 .logo{
 font-size:30px;
 font-weight:800;
-color:#a855f7;
+color:var(--lemon);
 margin-bottom:8px;
 }
 
 h2{
 font-size:20px;
 margin-bottom:8px;
+color:#fff;
 }
 
 .subtitle{
 font-size:13px;
-color:#cfcfcf;
+color:#f2f2f2;
 line-height:1.6;
 margin-bottom:18px;
 }
@@ -60,17 +68,21 @@ input{
 width:100%;
 padding:14px;
 margin-bottom:10px;
-border:none;
+border:1px solid rgba(255,255,255,.15);
 border-radius:12px;
-background:#1a0a2e;
-color:white;
+background:rgba(255,255,255,.12);
+color:#fff;
 outline:none;
-transition:0.2s;
+transition:.3s;
+}
+
+input::placeholder{
+color:#e8e8e8;
 }
 
 input:focus{
-border:1px solid #8a2be2;
-box-shadow:0 0 8px rgba(138,43,226,.3);
+border:1px solid var(--lemon);
+box-shadow:0 0 8px rgba(223,255,79,.35);
 }
 
 button{
@@ -78,32 +90,30 @@ width:100%;
 padding:15px;
 border:none;
 border-radius:30px;
-background:linear-gradient(135deg,#8a2be2,#a855f7);
-color:white;
+background:var(--lemon);
+color:var(--green-dark);
 font-weight:700;
 cursor:pointer;
 margin-top:10px;
-transition:0.2s;
+transition:.3s;
 }
 
 button:hover{
-transform:scale(1.02);
-opacity:0.95;
+transform:translateY(-2px);
 }
 
-/* bottom note */
 .footer-note{
 margin-top:18px;
 padding-top:14px;
-border-top:1px solid rgba(255,255,255,0.08);
+border-top:1px solid rgba(255,255,255,.12);
 font-size:12px;
-color:#aaa;
+color:#f0f0f0;
 line-height:1.6;
 }
 
 .footer-note span{
-color:#a855f7;
-font-weight:600;
+color:var(--lemon);
+font-weight:700;
 }
 </style>
 </head>
@@ -112,22 +122,22 @@ font-weight:600;
 
 <div class="container">
 
-<div class="logo">💜 VELORA</div>
+<div class="logo">NEXTEL</div>
 
 <h2>Welcome Back</h2>
 
 <div class="subtitle">
-Login to continue your earning journey on VELORA AI ecosystem.
+Login to continue your earning journey on the NEXTEL digital ecosystem.
 </div>
-
 <input type="text" id="username" placeholder="Username">
+
 <input type="password" id="password" placeholder="Password">
 
 <button onclick="loginUser()">LOGIN</button>
 
 <div class="footer-note">
-<span>Your plan will appear here after login</span><br>
-Don’t have an account? Register first to activate your plan.
+<span>Your selected plan will appear after login.</span><br>
+Don't have an account? Register first to activate your Nextel plan.
 </div>
 
 </div>
@@ -136,23 +146,26 @@ Don’t have an account? Register first to activate your plan.
 
 function loginUser(){
 
-const username = document.getElementById("username").value;
-const password = document.getElementById("password").value;
+const username = document.getElementById("username").value.trim();
+const password = document.getElementById("password").value.trim();
 
-const savedUser = localStorage.getItem("velora_username");
-const savedPass = localStorage.getItem("velora_password");
+const savedUser = localStorage.getItem("nextel_username");
+const savedPass = localStorage.getItem("nextel_password");
 
-if(!username || !password){
-alert("Please fill all fields");
+if(username === "" || password === ""){
+alert("Please fill in all fields.");
 return;
 }
 
 if(username !== savedUser || password !== savedPass){
-alert("Invalid login details");
+alert("Invalid username or password.");
 return;
 }
 
+alert("Login successful!");
+
 window.location.href = "dashboard.html";
+
 }
 
 </script>
