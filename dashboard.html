@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NEXTEL Dashboard</title>
 
@@ -15,96 +15,83 @@ name="viewport" content="width=device-width, initial-scale=1.0">
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-:root{
---green:#214d36;
---green2:#173827;
---lemon:#f0c84a;
+font-family:Poppins,sans-serif;
+ot{
+--green:#1f563b;
+--green-dark:#173f2c;
+--lemon:#f4c542;
 --white:#ffffff;
 --bg:#eef5ef;
---line:rgba(240,200,74,.18);
+--text:#214d36;
+--muted:#5f6b63;
 }
 
 body{
 background:linear-gradient(180deg,#eef5ef,#dce9df);
-color:var(--white);
-padding:20px;
+color:var(--text);
+padding:10px;
+overflow-x:hidden;
 }
 
 .container{
-max-width:920px;
+width:100%;
+max-width:500px;
 margin:auto;
 }
 
 .logo{
-font-size:34px;
+font-size:42px;
 font-weight:800;
 color:var(--green);
-margin-bottom:10px;
 text-align:center;
+margin-bottom:8px;
 }
 
 .greeting{
-color:#476a56;
-font-weight:600;
+font-size:15px;
+color:#5d7867;
+margin-top:5px;
 }
 
 .username{
-font-size:28px;
+font-size:24px;
 font-weight:700;
+margin-bottom:18px;
 color:var(--green);
-margin-bottom:20px;
 }
 
 .card{
 background:var(--green);
-border:1px solid var(--line);
-border-radius:22px;
 padding:20px;
-margin-bottom:18px;
-box-shadow:0 12px 30px rgba(0,0,0,.12);
+border-radius:22px;
+margin-bottom:14px;
+color:white;
+box-shadow:0 12px 30px rgba(0,0,0,.10);
 }
 
 .balance{
-font-size:42px;
+font-size:46px;
 font-weight:800;
+margin-top:12px;
 color:var(--lemon);
-margin-top:10px;
 }
 
 .actions{
-display:flex;
-gap:12px;
-margin-bottom:20px;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-bottom:18px;
 }
 
 .actions a{
-flex:1;
-min-width:150px;
 background:var(--green);
-color:#fff;
+color:white;
+padding:14px;
+border-radius:12px;
 text-decoration:none;
-padding:15px;
-border-radius:14px;
 text-align:center;
 font-weight:700;
-border:1px solid var(--line);
-transition:.3s;
-}
-
-.actions a:hover{
-background:var(--lemon);
-color:var(--green);
-}
-
-.section-title{
-color:var(--lemon);
-font-weight:700;
-margin-bottom:10px;
-te<!DOCTYPE html>
+font-size:14px;<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -121,132 +108,135 @@ te<!DOCTYPE html>
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Poppins,sans-serif;
 }
 
 :root{
---green:#214d36;
---green2:#173827;
---lemon:#f0c84a;
+--green:#1f563b;
+--green-dark:#173f2c;
+--lemon:#f4c542;
 --white:#ffffff;
 --bg:#eef5ef;
---line:rgba(240,200,74,.18);
+--text:#214d36;
+--muted:#5f6b63;
 }
 
 body{
 background:linear-gradient(180deg,#eef5ef,#dce9df);
-color:var(--white);
-padding:20px;
+color:var(--text);
+padding:10px;
+overflow-x:hidden;
 }
 
 .container{
-max-width:920px;
+width:100%;
+max-width:500px;
 margin:auto;
 }
 
 .logo{
-font-size:34px;
+font-size:42px;
 font-weight:800;
 color:var(--green);
-margin-bottom:10px;
 text-align:center;
+margin-bottom:8px;
 }
 
 .greeting{
-color:#476a56;
-font-weight:600;
+font-size:15px;
+color:#5d7867;
+margin-top:5px;
 }
 
 .username{
-font-size:28px;
+font-size:24px;
 font-weight:700;
+margin-bottom:18px;
 color:var(--green);
-margin-bottom:20px;
 }
 
 .card{
 background:var(--green);
-border:1px solid var(--line);
-border-radius:22px;
 padding:20px;
-margin-bottom:18px;
-box-shadow:0 12px 30px rgba(0,0,0,.12);
+border-radius:22px;
+margin-bottom:14px;
+color:white;
+box-shadow:0 12px 30px rgba(0,0,0,.10);
 }
 
 .balance{
-font-size:42px;
+font-size:46px;
 font-weight:800;
+margin-top:12px;
 color:var(--lemon);
-margin-top:10px;
 }
 
 .actions{
-display:flex;
-gap:12px;
-margin-bottom:20px;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-bottom:18px;
 }
 
 .actions a{
-flex:1;
-min-width:150px;
 background:var(--green);
-color:#fff;
+color:white;
+padding:14px;
+border-radius:12px;
 text-decoration:none;
-padding:15px;
-border-radius:14px;
 text-align:center;
 font-weight:700;
-border:1px solid var(--line);
+font-size:14px;
 transition:.3s;
 }
 
 .actions a:hover{
-background:var(--lemon);
-color:var(--green);
+background:var(--green-dark);
 }
 
 .section-title{
 color:var(--lemon);
+font-size:20px;
 font-weight:700;
 margin-bottom:10px;
-text-transform:uppercase;
-letter-spacing:.05em;
 }
 
 .module{
-background:#2b6044;
-border:1px solid rgba(240,200,74,.12);
-border-radius:16px;
-padding:15px;
+background:#ffffff;
+padding:18px;
+border-radius:18px;
 margin-bottom:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 .m-title{
-color:var(--lemon);
+color:var(--green);
 font-weight:700;
-margin-bottom:6px;
+font-size:17px;
+margin-bottom:5px;
 }
 
 .m-desc{
-color:#dbe8de;
-font-size:13px;
-line-height:1.6;
+color:#666;
+font-size:14px;
 margin-bottom:6px;
+line-height:1.5;
 }
 
 .m-pay{
-font-weight:700;
-color:#fff;
+color:var(--green);
+font-size:18px;
+font-weight:800;
 }
 
 .ref{
-background:#2b6044;
+background:#ffffff;
 padding:14px;
 border-radius:12px;
+color:var(--green);
 word-break:break-word;
 margin-top:10px;
-color:#fff;
+border:2px dashed var(--green);
 }
 
 .copy-btn{
@@ -254,10 +244,11 @@ width:100%;
 padding:15px;
 margin-top:12px;
 border:none;
-border-radius:40px;
+border-radius:14px;
 background:var(--lemon);
 color:var(--green);
-font-weight:800;
+font-size:16px;
+font-weight:700;
 cursor:pointer;
 transition:.3s;
 }
@@ -268,69 +259,82 @@ transform:translateY(-2px);
 
 .popup{
 position:fixed;
-left:15px;
-bottom:15px;
-width:290px;
+left:12px;
+right:12px;
+bottom:12px;
 background:var(--green);
-border:1px solid var(--line);
-border-radius:18px;
+color:white;
 padding:14px;
+border-radius:14px;
 display:none;
 z-index:9999;
-box-shadow:0 12px 30px rgba(0,0,0,.25);
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+animation:pop .4s ease;
+}
+
+@keyframes pop{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 .popup-title{
-color:var(--lemon);
 font-weight:700;
+color:var(--lemon);
 margin-bottom:4px;
 }
 
 .popup-time{
 font-size:12px;
-color:#dbe8de;
+color:#d9e6dc;
 }
 
-@media(max-width:768px){
+@media(max-width:600px){
 
-.actions{
-flex-direction:column;
-}
-
-.username{
-font-size:24px;
-}
-
-.balance{
+.logo{
 font-size:34px;
 }
 
+.username{
+font-size:20px;
 }
 
-</style>
+.balance{
+font-size:40px;
+}
 
-</head>
+.actions a{
+font-size:13px;
+padding:12px;
+}
 
+.section-title{
+font-size:18px;
+}
+
+}
+
+  </style>
 <body>
 
-<div ="container">
+<div class="container">
 
 <div class="logo">NEXTEL</div>
 
-<div class="greeting">
-Welcome back,
-</div>
+<div class="greeting">Good day,</div>
 
-<div class="username" id="user"></div>￼Enterxt-transform:uppercase;
-letter-spacing:.05em;
-}
+<div class="username" id="user"></div>
 
-.module{
 <div class="card">
 
 <div class="section-title" id="plan"></div>
 
-<h3>Total Balance</h3>
+<h3 style="color:white;margin-top:8px;">Total Balance</h3>
 
 <div class="balance" id="balance"></div>
 
@@ -338,17 +342,11 @@ letter-spacing:.05em;
 
 <div class="actions">
 
-<a href="activation.html">
-⚡ Activate
-</a>
+<a href="activation.html">⚡<br>Activate</a>
 
-<a href="activation.html">
-💸 Withdraw
-</a>
+<a href="activation.html">💸<br>Withdraw</a>
 
-<a href="activation.html">
-📋 History
-</a>
+<a href="activation.html">📋<br>History</a>
 
 </div>
 
@@ -358,41 +356,29 @@ letter-spacing:.05em;
 🔒 Account Status
 </div>
 
-<p id="statusText"
-style="color:#f0c84a;font-weight:700;margin-bottom:12px;">
-</p>
+<p id="statusText" style="color:#ffb4b4;font-weight:700;margin-bottom:15px;"></p>
 
-<div style="color:#f0c84a;font-weight:700;margin-bottom:6px;">
+<div style="color:var(--lemon);font-weight:700;margin-bottom:8px;">
 📌 Account State
 </div>
 
-<p style="color:#dbe8de;line-height:1.7;font-size:14px;margin-bottom:15px;">
+<p style="line-height:1.7;color:#f2f2f2;margin-bottom:18px;">
 
 Your account has not been activated yet.
 
-Activate your selected plan to unlock:
-
-<br><br>
-
-✔ All earning modules<br>
-✔ Referral commissions<br>
-✔ Call & SMS rewards<br>
-✔ Withdrawal access<br>
-✔ Premium dashboard features
+Activate your selected plan to unlock all earning modules, referral bonuses, withdrawals, and premium Nextel rewards.
 
 </p>
 
-<div style="color:#f0c84a;font-weight:700;margin-bottom:6px;">
-💸 Withdrawal Status
+<div style="color:var(--lemon);font-weight:700;margin-bottom:8px;">
+💳 Withdrawal Status
 </div>
 
-<p style="color:#dbe8de;line-height:1.7;font-size:14px;">
+<p style="line-height:1.7;color:#f2f2f2;">
 
 Withdrawals are currently locked.
 
-<br><br>
-
-Complete your activation payment to enable instant withdrawals based on your selected plan.
+After activation you can withdraw according to your selected plan once the minimum withdrawal amount has been reached.
 
 </p>
 
@@ -404,23 +390,22 @@ Complete your activation payment to enable instant withdrawals based on your sel
 💳 Activation Fee
 </div>
 
-<p id="feeText"
-style="font-size:20px;font-weight:700;color:#ffffff;">
-</p>
+<p id="feeText" style="font-size:22px;font-weight:700;color:white;"></p>
 
 </div>
-
-<h3 class="section-title">
-💰 EARNING MODULES
-</h3>
+<h3 class="section-title">💰 EARNING MODULES</h3>
 
 <div id="modules"></div>
 
 <div class="card">
 
 <h3 class="section-title">
-🔗 Referral Link
+🔗 Your Referral Link
 </h3>
+
+<p style="color:#f2f2f2;line-height:1.6;margin-bottom:10px;">
+Invite friends and earn referral bonuses every time they activate their account.
+</p>
 
 <div class="ref" id="ref"></div>
 
@@ -432,7 +417,7 @@ Copy Referral Link
 
 </div>
 
-<!-- Floating Popup -->
+<!-- FLOATING ACTIVITY POPUP -->
 
 <div class="popup" id="popup">
 
@@ -442,68 +427,71 @@ Copy Referral Link
 
 </div>
 
-<audio id="sound"
+<!-- NOTIFICATION SOUND -->
+
+<audio
+id="sound"
 src="https://www.soundjay.com/buttons/sounds/button-09.mp3">
 </audio>
 <script>
-
-/* ================= USER DATA ================= */
 
 const user = localStorage.getItem("nextel_username") || "User";
 const plan = localStorage.getItem("nextel_plan") || "DIAMOND";
 
 document.getElementById("user").innerText = "Hi, " + user + " 👋";
 document.getElementById("plan").innerText = plan + " PLAN";
-document.getElementById("balance").innerText =
-plan === "ROYAL" ? "₦16,000" : "₦9,000";
+document.getElementById("ref").innerText = "https://nextel.app/?ref=" + user;
 
-document.getElementById("feeText").innerText =
-plan === "ROYAL" ? "₦17,500" : "₦10,500";
+const data = {
 
-document.getElementById("statusText").innerText =
-"Account not activated — " + plan + " PLAN";
-
-document.getElementById("ref").innerText =
-"https://nextel.app/?ref=" + user;
-
-/* ================= PLAN DATA ================= */
-
-const modules = {
-
-DIAMOND:[
-["💰 Instant Cashback","₦9,000 reward after activation","₦9,000"],
-["🤝 Direct Referral Bonus","Earn for every direct referral","₦7,200"],
-["📞 Call Rewards","Earn from verified calls","₦5,500"],
-["📩 SMS Rewards","Earn from SMS campaigns","₦3,000"],
-["▶️ YouTube Earnings","Content engagement rewards","₦20,000"],
-["🎁 Spillover Bonus","Passive network income","₦1,000"]
-],
-
-ROYAL:[
-["💰 Instant Cashback","₦16,000 reward after activation","₦16,000"],
-["🤝 Direct Referral Bonus","Premium referral rewards","₦12,500"],
-["📞 Call Rewards","International call rewards","₦15,000"],
-["📩 SMS Rewards","Premium SMS earnings","₦10,000"],
-["▶️ YouTube Premium","Higher YouTube rewards","₦40,000"],
-["👻 Snapchat Earnings","Social media rewards","₦6,000"],
-["🎉 Network Bonus","Active user rewards","₦8,000"],
-["📊 Nextel Web Gain","Advertising income","₦50,000"]
+DIAMOND:{
+fee:"₦10,500",
+cashback:"₦9,000",
+status:"Account not activated — DIAMOND PLAN",
+modules:[
+{t:"💰 Instant Cashback",d:"₦9,000 reward after activation",p:"₦9,000"},
+{t:"🤝 Direct Referral Bonus",d:"Earn ₦7,200 per referral",p:"₦7,200"},
+{t:"📞 Call Rewards",d:"International call rewards",p:"₦5,500"},
+{t:"📩 SMS Rewards",d:"Premium SMS earnings",p:"₦3,000"},
+{t:"▶️ YouTube Earnings",d:"YouTube engagement rewards",p:"₦20,000"},
+{t:"🎁 Spillover Bonus",d:"Passive network earnings",p:"₦1,000"}
 ]
+},
+
+ROYAL:{
+fee:"₦17,500",
+cashback:"₦16,000",
+status:"Account not activated — ROYAL PLAN",
+modules:[
+{t:"💰 Instant Cashback",d:"₦16,000 reward after activation",p:"₦16,000"},
+{t:"🤝 Direct Referral Bonus",d:"Premium referral rewards",p:"₦12,500"},
+{t:"📞 Call Rewards",d:"International call rewards",p:"₦15,000"},
+{t:"📩 SMS Rewards",d:"Premium SMS earnings",p:"₦10,000"},
+{t:"▶️ YouTube Premium",d:"Higher YouTube rewards",p:"₦40,000"},
+{t:"👻 Snapchat Earnings",d:"Social media rewards",p:"₦6,000"},
+{t:"🎉 Network Bonus",d:"Active user rewards",p:"₦8,000"},
+{t:"📊 Nextel Web Gain",d:"Advertising income",p:"₦50,000"}
+]
+}
 
 };
 
+document.getElementById("statusText").innerText = data[plan].status;
+document.getElementById("feeText").innerText = data[plan].fee;
+document.getElementById("balance").innerText = data[plan].cashback;
+
 const box = document.getElementById("modules");
 
-modules[plan].forEach(item=>{
+data[plan].modules.forEach(m=>{
 
 const div=document.createElement("div");
 
 div.className="module";
 
 div.innerHTML=`
-<div class="m-title">${item[0]}</div>
-<div class="m-desc">${item[1]}</div>
-<div class="m-pay">${item[2]}</div>
+<div class="m-title">${m.t}</div>
+<div class="m-desc">${m.d}</div>
+<div class="m-pay">${m.p}</div>
 `;
 
 box.appendChild(div);
@@ -512,60 +500,70 @@ box.appendChild(div);
 
 function copyRef(){
 
-navigator.clipboard.writeText(
-document.getElementById("ref").innerText
-);
+navigator.clipboard.writeText(document.getElementById("ref").innerText);
 
-alert("Referral link copied!");
+alert("Referral link copied.");
 
 }
-/* ================= LIVE ACTIVITY POPUP ================= */
 
-const names = [
-"Ade","Mary","John","Grace","David","Chioma","James","Sophia",
-"Michael","Tunde","Peter","Emma","Daniel","Blessing",
-"Samuel","Esther","Victor","Faith","Mercy","Aisha"
+/* LIVE POPUP */
+
+const names=[
+"Ayo","Mary","John","Grace","David","Chioma","James","Sophia",
+"Michael","Tunde","Peter","Emma","Daniel","Blessing"
 ];
 
-const countries = [
-"Nigeria","Ghana","Kenya","United Kingdom","Canada",
-"United States","South Africa"
+const countries=[
+"Nigeria","Ghana","Kenya","UK","USA","Canada","South Africa"
 ];
+
+const messages=[];
+
+for(let i=0;i<50;i++){
+
+const n=names[Math.floor(Math.random()*names.length)];
+
+const c=countries[Math.floor(Math.random()*countries.length)];
+
+const amt=Math.floor(Math.random()*90000)+2000;
+
+messages.push(`${n} from ${c} earned ₦${amt.toLocaleString()}`);
+
+}
 
 function showPopup(){
 
-const popup = document.getElementById("popup");
-const msg = document.getElementById("msg");
-const time = document.getElementById("time");
-const sound = document.getElementById("sound");
+const popup=document.getElementById("popup");
 
-const name = names[Math.floor(Math.random()*names.length)];
-const country = countries[Math.floor(Math.random()*countries.length)];
-const amount = Math.floor(Math.random()*45000)+5000;
+document.getElementById("msg").innerText=
+messages[Math.floor(Math.random()*messages.length)];
 
-msg.innerHTML =
-`${name} from ${country} earned <strong>₦${amount.toLocaleString()}</strong>`;
+document.getElementById("time").innerText=
+Math.floor(Math.random()*30+1)+" mins ago";
 
-time.innerHTML =
-`${Math.floor(Math.random()*30)+1} minutes ago`;
+popup.style.display="block";
 
-popup.style.display = "block";
+const sound=document.getElementById("sound");
 
-if(sound){
-sound.currentTime = 0;
+sound.currentTime=0;
+
 sound.play().catch(()=>{});
-}
 
 setTimeout(()=>{
+
 popup.style.display="none";
+
 },5000);
 
 }
 
-setTimeout(showPopup,3000);
-setInterval(showPopup,8000);
+setTimeout(showPopup,2000);
+
+setInterval(showPopup,7000);
 
 </script>
 
 </body>
 </html>
+
+
