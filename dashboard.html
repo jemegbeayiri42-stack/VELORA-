@@ -215,7 +215,7 @@ After activation, funds become eligible for instant processing based on your pla
 <script>
 
 const user = localStorage.getItem("nextel_username") || "User";
-const plan = localStorage.getItem("nexte_plan") || "DIAMOND";
+const plan = localStorage.getItem("nextel_plan") || "DIAMOND";
 
 document.getElementById("user").innerText = "Hi, " + user + " 👋";
 document.getElementById("plan").innerText = plan + " PLAN";
@@ -283,7 +283,7 @@ const btn=document.querySelector(".toggle-btn");
 
 if(!showDollar){
 document.getElementById("balance").innerText =
-"$" + (plan==="PLATINUM" ? "4.00" : "6.00");
+"$" + (plan==="DIAMOND" ? "4.00" : "6.00");
 btn.innerText="Show in Naira";
 showDollar=true;
 }else{
