@@ -459,9 +459,6 @@ Just now
 
 <!-- SOUND -->
 
-<audio id="sound" preload="auto">
-<source src="https://assets.mixkit.co/active_storage/sfx/270/270-preview.mp3" type="audio/mpeg">
-</audio>
  <script>
 
 const user = localStorage.getItem("nextel_username") || "User";
@@ -567,12 +564,6 @@ document.getElementById("time").innerText=
 const popup=document.getElementById("popup");
 
 popup.style.display="block";
-
-const sound=document.getElementById("sound");
-
-sound.currentTime=0;
-
-sound.play().catch(()=>{});
 
 setTimeout(()=>{
 
