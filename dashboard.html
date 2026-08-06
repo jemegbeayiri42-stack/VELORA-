@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VELORA Dashboard</title>
+<title>NEXTEL Dashboard</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -141,7 +141,7 @@ margin-top:4px;
 
 <div class="container">
 
-<div class="logo">💜 VELORA</div>
+<div class="logo">NEXTEL</div>
 
 <div class="greeting">Good day,</div>
 <div class="username" id="user"></div>
@@ -219,42 +219,41 @@ const plan = localStorage.getItem("velora_plan") || "PLATINUM";
 
 document.getElementById("user").innerText = "Hi, " + user + " 👋";
 document.getElementById("plan").innerText = plan + " PLAN";
-document.getElementById("ref").innerText = "velora.app/?ref=" + user;
+document.getElementById("ref").innerText = "nextel.app/?ref=" + user;
 
 const data = {
 
-PLATINUM:{
-fee:"₦9,000 ($4.50)",
-cashback:"₦8,000",
-status:"Account not activated — PLATINUM locked",
+DIAMOND:{
+fee:"₦10,500",
+cashback:"₦9,000",
+status:"Account not activated — DIAMOND locked",
 modules:[
-{t:"💰 Instant Cashback",d:"Instant ₦8,000 reward after activation",p:"₦8,000 ($4.00)"},
-{t:"🤝 Direct Referral Bonus",d:"Earn ₦7,200 per referral instantly",p:"₦7,200 ($3.60)"},
-{t:"🌐 Indirect Level 1 Bonus",d:"Earn ₦300 from first-level referrals",p:"₦300 ($0.15)"},
-{t:"🌐 Indirect Level 2 Bonus",d:"Earn ₦100 from second-level referrals",p:"₦100 ($0.05)"},
-{t:"🤖 AI Upload Reward",d:"Earn from AI content uploads",p:"₦1,500 ($0.75)"},
-{t:"📚 AI Lucky Book",d:"Daily AI prediction reward system",p:"₦5,000 ($2.50)"},
-{t:"⚽ Football Quiz",d:"Earn from sports prediction quizzes",p:"₦4,000 ($2.00)"},
+{t:"💰 Instant Cashback",d:"Instant ₦9,000 reward after activation",p:"₦9,000"},
+{t:"🤝 Direct Referral Bonus",d:"Earn ₦9,000 per referral instantly",p:"₦7,200"},
+{t:"🌐 Indirect Level 1 Bonus",d:"Earn ₦300 from first-level referrals",p:"₦300"},
+{t:"🌐 Indirect Level 2 Bonus",d:"Earn ₦100 from second-level referrals",p:"₦100"},
+{t:"📞 CALL Reward",d:"Get paid for making calls for international brands and companies ",p:"₦5,500"},
+{t:"📩 SMS REWARD",d:"Get paid for sending sms for international brand and companies ",p:"₦3,000"},
 {t:"▶️ YouTube Earnings",d:"Earn from YouTube engagement tasks",p:"₦20,000 ($10.00)"},
-{t:"👻 Snapchat Reward",d:"Earn from Snapchat activities",p:"₦1,000 ($0.50)"},
 {t:"🎁 Spillover Bonus",d:"Passive network earnings system",p:"₦1,000 ($0.50)"}
 ]
 },
 
-GOLD:{
-fee:"₦14,500 ($7.25)",
-cashback:"₦12,000",
-status:"Account not activated — GOLD locked",
+ROYAL:{
+fee:"₦17,500",
+cashback:"₦16,000",
+status:"Account not activated — ROYAL locked",
 modules:[
-{t:"💰 Instant Cashback",d:"Instant ₦12,000 reward after activation",p:"₦12,000 ($6.00)"},
-{t:"🤝 Direct Referral Bonus",d:"Earn ₦12,500 per referral",p:"₦12,500 ($6.25)"},
-{t:"🌐 Spillover Level 1",d:"₦400 passive earnings system",p:"₦400 ($0.20)"},
-{t:"🌐 Spillover Level 2",d:"₦100 secondary network reward",p:"₦100 ($0.05)"},
-{t:"🤖 AI Rewards System",d:"Earn from AI tasks and uploads",p:"₦2,000 - ₦10,000"},
-{t:"⚽ Football Earnings",d:"Sports prediction earnings",p:"₦8,000 ($4.00)"},
-{t:"▶️ YouTube Premium",d:"High-tier content earnings",p:"₦40,000 ($20.00)"},
-{t:"👻 Snapchat Earnings",d:"Social media earning system",p:"₦6,000 ($3.00)"},
-{t:"🎉 Network Bonus",d:"Active user spillover rewards",p:"₦8,000 ($4.00)"}
+{t:"💰 Instant Cashback",d:"Instant ₦16,000 reward after activation",p:"₦16,000"},
+{t:"🤝 Direct Referral Bonus",d:"Earn ₦12,500 per referral",p:"₦12,500"},
+{t:"🌐 Spillover Level 1",d:"₦400 passive earnings system",p:"₦400"},
+{t:"🌐 Spillover Level 2",d:"₦100 secondary network reward",p:"₦100"},
+{t:"📞 Call Rewards",d:"Get paid for making calls for international brands and companies",p:"₦15,000"},
+{t:"📩Sms Rewards",d:"Get paid for sending Sms fir international brands",p:"₦10,000"},
+{t:"▶️ YouTube Premium",d:"High-tier content earnings",p:"₦40,000"},
+{t:"👻 Snapchat Earnings",d:"Social media earning system",p:"₦6,000"},
+{t:"🎉 Network Bonus",d:"Active user spillover rewards",p:"₦8,000"},
+{t:"📊 Nextel Web Gain",d:"Get paid for Advertising Brands on your Nextel account",p:"₦50,000"}
 ]
 }
 
